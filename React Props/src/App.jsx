@@ -6,12 +6,15 @@ import ListPicker from './ListPicker';
 import ObjectPass from './ObjectPass';
 import DoubleDice from './DoubleDice';
 import Heading from './Heading';
+import ColorList from './ColorList';
 
 function App() {
   return (
     <div>
       <Heading color="magenta" text="Welcome!" fontSize="35px" />
       <Heading color="blue" text="Melo" fontSize="30px" />
+
+      <ColorList colors={['red', 'pink', 'purple', 'blue']}/>
 
       <DoubleDice />
       <DoubleDice />
