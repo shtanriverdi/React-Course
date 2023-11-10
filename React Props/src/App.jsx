@@ -5,10 +5,14 @@ import Greeter from './Greeter';
 import ListPicker from './ListPicker';
 import ObjectPass from './ObjectPass';
 import DoubleDice from './DoubleDice';
+import Heading from './Heading';
 
 function App() {
   return (
     <div>
+      <Heading color="magenta" text="Welcome!" fontSize="35px" />
+      <Heading color="blue" text="Melo" fontSize="30px" />
+
       <DoubleDice />
       <DoubleDice />
       <DoubleDice />
