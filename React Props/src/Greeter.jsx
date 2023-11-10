@@ -1,4 +1,4 @@
-export default function Greeter({ person, from }) {
+export default function Greeter({ person = 'everyone', from = 'anonymous' }) {
     // const { person } = props;
     return (
         <>
