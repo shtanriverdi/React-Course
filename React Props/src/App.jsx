@@ -12,7 +12,7 @@ function App() {
       {/* This is how to pass a number to a component */}
       <Die numSides={20}/>
       <Die numSides={10}/>
-      <Die numSides={2}/>
+      <Die/>
     </div>
   );
 }
