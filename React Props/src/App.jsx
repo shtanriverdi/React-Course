@@ -15,6 +15,7 @@ function App() {
       <Heading color="blue" text="Melo" fontSize="30px" />
 
       <ColorList colors={['red', 'pink', 'purple', 'blue']}/>
+      <ColorList colors={['green', 'red', 'olive', 'orange']}/>
 
       <DoubleDice />
       <DoubleDice />
