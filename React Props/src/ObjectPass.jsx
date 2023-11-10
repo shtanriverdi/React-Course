@@ -1,5 +1,7 @@
-export default function ObjectPass({ info }) {
-    const { a, b, c } = info;
+// export default function ObjectPass({ info }) {
+export default function ObjectPass(passedObject) {
+    const { a, b, c } = passedObject.info;
+    // const { a, b, c } = info;
     return (
         <>
             <h3>Object Desctruction</h3>

@@ -8,8 +8,9 @@ import ObjectPass from './ObjectPass';
 function App() {
   return (
     <div>
+      <Greeter person="Melo Genesis" from="Seno Gülo"/> 
       { console.log('We escaped from JSX to JS world!') }
-      {1}
+      {1453}
       {/* the first curly braces pair tell treat this as JS */}
       <ObjectPass info={{ a: 1453, b: "String", c: 3.5 }} />
       <ListPicker values={[1, 2, 3]} />
