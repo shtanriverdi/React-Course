@@ -3,6 +3,7 @@ import Die from './Die';
 // import Chicken from './Chicken'
 import Greeter from './Greeter';
 import ListPicker from './ListPicker';
+import ObjectPass from './ObjectPass';
 
 function App() {
   return (
@@ -10,9 +11,9 @@ function App() {
       { console.log('We escaped from JSX to JS world!') }
       {1}
       {/* the first curly braces pair tell treat this as JS */}
+      <ObjectPass info={{ a: 1453, b: "String", c: 3.5 }} />
       <ListPicker values={[1, 2, 3]} />
       <ListPicker values={['A', 'B', 'C']} />
-      {/* <ListPicker values={{ a: 1, b: 2, c: 3 }} /> */}
     </div>
   );
   // return (
