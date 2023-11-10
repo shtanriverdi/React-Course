@@ -1,0 +1,10 @@
+.DieRolls {
+  border: 1px solid green;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.DieRolls h1 {
+  font-weight: 1500;
+  color: brown;
+}
