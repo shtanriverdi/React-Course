@@ -7,8 +7,12 @@ import ListPicker from './ListPicker';
 function App() {
   return (
     <div>
+      { console.log('We escaped from JSX to JS world!') }
+      {1}
       {/* the first curly braces pair tell treat this as JS */}
       <ListPicker values={[1, 2, 3]} />
+      <ListPicker values={['A', 'B', 'C']} />
+      {/* <ListPicker values={{ a: 1, b: 2, c: 3 }} /> */}
     </div>
   );
   // return (
