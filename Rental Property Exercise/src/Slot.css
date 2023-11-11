@@ -1,0 +1,7 @@
+.Slot {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin: 15px;
+    background-color: rgb(81, 110, 145);
+}
