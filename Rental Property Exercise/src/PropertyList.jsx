@@ -6,12 +6,18 @@ function PropertyList({ properties }) {
     // const { id, name, rating, price } = properties;
     return (
         <div className='PropertyList'>
-            {properties.map(property => {
+            {properties.map(property =>
+                <Slot
+                    key={property.id}
+                    {...property}
+                />
+            )}
+            {/* {properties.map(property => {
                 return <Slot
                     key={property.id}
                     {...property}
                 />
-            })}
+            })} */}
             {/* {properties.map(property => {
                 return <Slot
                     key={property.id}
