@@ -1,17 +1,26 @@
 import './App.css';
 import Die from './Die';
-// import Chicken from './Chicken'
+import Chicken from './Chicken'
 import Greeter from './Greeter';
 import ListPicker from './ListPicker';
 import ObjectPass from './ObjectPass';
 import DoubleDice from './DoubleDice';
 import Heading from './Heading';
 import ColorList from './ColorList';
+import ShoppingList from './ShoppingList';
+
+const data = [
+  { id: 1, item: 'egg', quantity: 12, completed: false },
+  { id: 2, item: 'milk', quantity: 12, completed: true },
+  { id: 3, item: 'chicken breasts', quantity: 12, completed: false },
+  { id: 4, item: 'carrots', quantity: 12, completed: true },
+];
 
 function App() {
   return (
     <div>
-      <Heading color="magenta" text="Welcome!" fontSize="35px" />
+      <ShoppingList items={data} />
+      {/* <Heading color="magenta" text="Welcome!" fontSize="35px" />
       <Heading color="blue" text="Melo" fontSize="30px" />
 
       <ColorList colors={['red', 'pink', 'purple', 'blue']}/>
@@ -19,7 +28,7 @@ function App() {
 
       <DoubleDice />
       <DoubleDice />
-      <DoubleDice />
+      <DoubleDice /> */}
       {/* <Greeter person="Melo Genesis" from="Seno Gülo" /> */}
       {/* {console.log('We escaped from JSX to JS world!')} */}
       {/* {1453} */}
