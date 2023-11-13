@@ -8,6 +8,7 @@ import DoubleDice from './DoubleDice';
 import Heading from './Heading';
 import ColorList from './ColorList';
 import ShoppingList from './ShoppingList';
+import Clicker from './Clicker';
 
 const data = [
   { id: 1, item: 'egg', quantity: 12, completed: false },
@@ -19,7 +20,8 @@ const data = [
 function App() {
   return (
     <div>
-      <ShoppingList items={data} />
+      <Clicker />
+      {/* <ShoppingList items={data} /> */}
       {/* <Heading color="magenta" text="Welcome!" fontSize="35px" />
       <Heading color="blue" text="Melo" fontSize="30px" />
 
