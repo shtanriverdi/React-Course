@@ -17,9 +17,9 @@ function TogglerCounter() {
             <p onClick={toggleIsHappy} className="Toggler">
                 {isHappy ? `😊` : `😒`}
             </p>
-            <p onClick={handleCount} className="Toggler">
+            <button onClick={handleCount} className="Toggler">
                 {count}
-            </p>
+            </button>
         </div>
     );
 }
