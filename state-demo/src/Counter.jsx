@@ -1,9 +1,15 @@
 import { useState } from "react";
 
 function Counter() {
+    console.log('Rendered!!!');
     const [count, setCount] = useState(0);
     const addOne = () => {
         setCount(count + 1);
+    }
+    const setToTen = () => {
+        setCount(10);
+        // This won't render the conponent after it know the value is same!
+        // So the value has to be changed in order to render
     }
     const addThree = () => {
         /* Correct Way to Update The State
@@ -13,6 +19,8 @@ function Counter() {
         React will automatically queue these up
         and pass the updated state value through the others
         But we still have previous version, because they will batch together
+        This prevents re-rendering this component 3 times!
+        This will be rendered only once! but values will be 3
          */
         setCount((currentCount) => currentCount + 1);
         //        ^----------^ -> Will automatically 
@@ -40,6 +48,7 @@ function Counter() {
             <p>Count: {count}</p>
             <button onClick={addOne}>+1</button>
             <button onClick={addThree}>+3</button>
+            <button onClick={setToTen}>10</button>
         </div>
     );
 }
