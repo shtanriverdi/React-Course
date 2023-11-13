@@ -11,12 +11,14 @@ function ScoreKeeper() {
     to update the view, to render, while working with OBJECTS and ARRAYS
     basically, even if we update these, since the original Object or Array,
     meaning the address in the memory will remain the same, because they
-    are not immutable like string, number or boolean, their value will 
-    remain same, that's why if we update the object and call the setScore
-    function with that object, react won't render the view/component because
+    are not immutable like string, number or boolean, they are mutable!,
+    their value will remain same, that's why if we update the object 
+    and call the setScore function with that object, 
+    react won't render the view/component because
     the value is still same. So we need to CREATE A NEW OBJECT/ARRAY 
     probably by copying the previous Object/Array and adding new updates on it.
     This way react will understand the data actually changed and will render the view.
+    React does the compariosn based on the identity on the objects/arrays/elements
     WE DONT MUTATE OBJECTS/ARRAYS IN PLACE!
     */
 
