@@ -16,6 +16,6 @@ export default function ColorBox({ colors }) {
     const [color, setColor] = useState(getRandomColor());
 
     return (
-        <div onClick={updateColor} className="ColorBox" style={{ backgroundColor: color }}></div>
+        <div onMouseOver={updateColor} className="ColorBox" style={{ backgroundColor: color }}></div>
     );
 }
