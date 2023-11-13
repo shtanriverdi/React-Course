@@ -26,7 +26,7 @@ function App() {
     <div>
       <TogglerCounter />
       {/* <Toggler /> */}
-      {/* <Counter /> */}
+      <Counter />
       {/* <Clicker />
       <Form /> */}
       {/* <ShoppingList items={data} /> */}
