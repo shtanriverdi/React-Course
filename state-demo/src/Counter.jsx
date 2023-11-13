@@ -24,7 +24,7 @@ function Counter() {
          */
         setCount((currentCount) => currentCount + 1);
         //        ^----------^ -> Will automatically 
-        //         filled by react with old
+        //         filled by react with old state value
         setCount((currentCount) => {
             // Still we don't have updated currentCount here as well!
             return currentCount + 1;
