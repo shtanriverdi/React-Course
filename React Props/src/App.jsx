@@ -9,6 +9,7 @@ import Heading from './Heading';
 import ColorList from './ColorList';
 import ShoppingList from './ShoppingList';
 import Clicker from './Clicker';
+import Form from './Form';
 
 const data = [
   { id: 1, item: 'egg', quantity: 12, completed: false },
@@ -21,6 +22,7 @@ function App() {
   return (
     <div>
       <Clicker />
+      <Form />
       {/* <ShoppingList items={data} /> */}
       {/* <Heading color="magenta" text="Welcome!" fontSize="35px" />
       <Heading color="blue" text="Melo" fontSize="30px" />
