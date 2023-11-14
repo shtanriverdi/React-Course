@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function ScoreKeeper({ numOfPlayers, finalScore }) {
-    const [scores, setScores] = useState(Array(numOfPlayers).fill(0));
+export default function ScoreKeeper({ numOfPlayers=3, finalScore=5 }) {
+    const [scores, setScores] = useState(new Array(numOfPlayers).fill(0));
 
     const updateScores = (index) => {
         setScores((prevScores) => {
@@ -12,7 +12,7 @@ export default function ScoreKeeper({ numOfPlayers, finalScore }) {
     };
 
     const resetScores = () => {
-        setScores(Array(numOfPlayers).fill(0));
+        setScores(new Array(numOfPlayers).fill(0));
     };
 
     return (
