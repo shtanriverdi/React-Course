@@ -1,13 +1,22 @@
 import './App.css';
 import Dice from './Dice';
+import LuckyN from './LuckyN';
+import { sum } from './utils';
+
+function lessThan4(dice) {
+  return sum(dice) < 4;
+}
 
 function App() {
   return (
-    <div>
-      <Dice dice={[3, 6, 1]} />
-      <Dice dice={[1, 2, 3]} color='orange' />
-      <Dice dice={[1, 2, 3]} color='green' />
-    </div>
+    <>
+      {/* Pass a function as prop */}
+      <LuckyN winCheck={lessThan4} />
+      {/* <LuckyN numDice={3} goal={6} /> */}
+      {/* <Dice dice={[3, 6, 1]} />
+      <Dice dice={[5, 1, 2, 3]} color='orange' />
+      <Dice dice={[1, 2, 3]} color='green' /> */}
+    </>
   )
 }
 
