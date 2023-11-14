@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 
 function getRandomEmoji() {
     console.log("CALLED")
-    const choices = ['😊','😒','😂','👌','⭐','👍','😉','😉'];
+    const choices = ['😊', '😒', '😂', '👌', '⭐', '👍', '😉', '😉'];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
@@ -16,6 +16,18 @@ export default function EmojiClicker() {
         setEmojis((previousEmojis) => {
             const newEmojis = [...previousEmojis, { id: uuid(), emoji: getRandomEmoji() }];
             return newEmojis;
+        });
+    }
+
+    const makeAllEmojisHeart = () => {
+        setEmojis((previousEmojis) => {
+            const updatedEmojis = previousEmojis.map((emoji) => {
+                return {
+                    ...emoji,
+                    emoji: `❤️`
+                };
+            });
+            return updatedEmojis;
         });
     }
 
@@ -41,6 +53,7 @@ export default function EmojiClicker() {
                 ))}
             </div>
             <button onClick={addEmoji}>Add Emoji</button>
+            <button onClick={makeAllEmojisHeart}>Make Them All Hearts</button>
         </>
     );
 }
