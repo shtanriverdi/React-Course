@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function ScoreKeeper({ numOfPlayers=3, finalScore=5 }) {
     const [scores, setScores] = useState(new Array(numOfPlayers).fill(0));
-
+    const [gameOver, setGameOver] = useState(false); 
     // const updateScores = (index) => {
     //     setScores((prevScores) => {
     //         const newScores = [...prevScores];
@@ -16,6 +16,9 @@ export default function ScoreKeeper({ numOfPlayers=3, finalScore=5 }) {
         setScores((prevScores) => {
             return prevScores.map((score, scoreIndex) => {
                 if (scoreIndex === indexToUpdate) {
+                    if (score + 1 === finalScore) {
+                        setGameOver(true);
+                    }
                     return score + 1;
                 }
                 return score;
@@ -32,6 +35,7 @@ export default function ScoreKeeper({ numOfPlayers=3, finalScore=5 }) {
              to the object creation expression new Array(…) with the same arguments.
             */
         setScores(new Array(numOfPlayers).fill(0));
+        setGameOver(false);
         // setScores(Array(numOfPlayers).fill(0)); // This will work too!
     };
 
@@ -43,7 +47,7 @@ export default function ScoreKeeper({ numOfPlayers=3, finalScore=5 }) {
                     scores.map((score, index) => {
                         return (
                             <li key={index}>Player {index + 1}: {score}
-                                <button onClick={() => updateScores(index)}>+1</button>
+                                <button style={{ display: !gameOver ? 'inline-block' : 'none' }} onClick={() => updateScores(index)}>+1</button>
                                 {(score === finalScore) && 'WINNER'}
                             </li>
                         );
