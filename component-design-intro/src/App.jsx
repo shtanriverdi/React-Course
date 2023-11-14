@@ -15,9 +15,9 @@ function App() {
   return (
     <>
       {/* Pass a function as prop */}
-      <LuckyN winCheck={lessThan4} />
-      <LuckyN winCheck={allSameValue} />
-      <LuckyN winCheck={allSameValue} numDice={3} />
+      <LuckyN winCheck={lessThan4} title="Roll <4"/>
+      <LuckyN winCheck={allSameValue} title="Roll All Same" />
+      <LuckyN winCheck={allSameValue} title="Roll All Same" numDice={3} />
       {/* <LuckyN numDice={3} goal={6} /> */}
       {/* <Dice dice={[3, 6, 1]} />
       <Dice dice={[5, 1, 2, 3]} color='orange' />
