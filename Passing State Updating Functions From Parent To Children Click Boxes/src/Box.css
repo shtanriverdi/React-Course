@@ -1,7 +1,8 @@
 .Box {
+    display: inline-block;
     background-color: salmon;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 10px;
     margin-top: 5px;
     margin-left: 5px;

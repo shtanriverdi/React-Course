@@ -1,12 +1,11 @@
-import { useState } from 'react';
 import './Box.css';
 
-export default function Box({ isActive = false, toggleIsActive }) {
+export default function Box({ isActive = false, toggleBox }) {
     return (
         <div
-            onClick={toggleIsActive}
+            onClick={toggleBox}
             style={{ backgroundColor: isActive ? 'springgreen' : 'salmon' }}
-            className="Box">
-        </div>
+            className="Box"
+        ></div>
     );
 }
