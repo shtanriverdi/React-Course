@@ -16,6 +16,7 @@ export default function ShoppingListForm() {
 
     return (
         <form>
+            <h1>Product is {formData.product} and Quantity: {formData.quantity}</h1>
             <label htmlFor="product">Product</label>
             <input
                 type="text"
@@ -23,6 +24,15 @@ export default function ShoppingListForm() {
                 name="product"
                 id="product"
                 value={formData.product}
+                onChange={handleChange}
+            />
+            <label htmlFor="quantity">Quantity</label>
+            <input
+                type="number"
+                placeholder="1"
+                name="quantity"
+                id="quantity"
+                value={formData.quantity}
                 onChange={handleChange}
             />
         </form>
