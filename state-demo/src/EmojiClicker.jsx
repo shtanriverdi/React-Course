@@ -7,10 +7,18 @@ function getRandomEmoji() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+// React will call it only once during the initial render, 
+// setting the initial state without causing additional renders.
+function getInitialEmoji() {
+    console.log("RUN INITIAL EMOJI FUNCTION");
+    return [{ id: uuid(), emoji: getRandomEmoji() }];
+}
+
 export default function EmojiClicker() {
     /* https://stackoverflow.com/questions/60120261/when-to-use-usestate-initial-value-as-function */
     // Set the random unique ID
-    const [emojis, setEmojis] = useState([{ id: uuid(), emoji: getRandomEmoji() }]);
+    // const [emojis, setEmojis] = useState([{ id: uuid(), emoji: getRandomEmoji() }]);
+    const [emojis, setEmojis] = useState(getInitialEmoji());
 
     const addEmoji = () => {
         setEmojis((previousEmojis) => {
