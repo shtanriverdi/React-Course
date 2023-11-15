@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import UsernameForm from './UsernameForm';
+import SignupForm from './SignupForm';
 
 function App() {
 
   return (
-    <UsernameForm/>
+    <SignupForm/>
   )
 }
 
