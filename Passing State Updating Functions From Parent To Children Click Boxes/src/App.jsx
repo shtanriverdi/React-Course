@@ -4,7 +4,10 @@ import BoxGrid from './BoxGrid';
 function App() {
 
   return (
-    <BoxGrid />
+    <>
+      <BoxGrid />
+      <button>Reset</button>
+    </>
   )
 }
 
