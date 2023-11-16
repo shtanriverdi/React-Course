@@ -34,7 +34,9 @@ export default function RegistrationForm() {
     };
 
     // watch input value by passing the name of it
-    console.log(watch("example"));
+    console.log(watch("name"));
+    console.log(watch("email"));
+    console.log(watch("password"));
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" 
