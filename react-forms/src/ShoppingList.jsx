@@ -1,16 +1,17 @@
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 import ShoppingListForm from './ShoppingListForm';
 
 function ShoppingList() {
     const [items, setItems] = useState(
         [
             {
-                id: 1,
+                id: uuid(),
                 product: "Bananas",
                 quantity: 8
             },
             {
-                id: 2,
+                id: uuid(),
                 product: "Eggs",
                 quantity: 2
             }
@@ -19,7 +20,7 @@ function ShoppingList() {
 
     const addItem = (item) => {
         setItems((prevItems) => {
-            return [...prevItems, {...item, id: 9} ];
+            return [...prevItems, { ...item, id: uuid() }];
         });
     }
 
