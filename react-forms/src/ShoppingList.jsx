@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-import ShoppingListForm from './ShoppingListForm';
+import ValidatedShoppingListForm from './ValidatedShoppingListForm';
 
-function ShoppingList() {
+export default function ShoppingList() {
     const [items, setItems] = useState(
         [
             {
@@ -30,9 +30,7 @@ function ShoppingList() {
             <ul>
                 {items.map(i => <li key={i.id}>{i.product} - {i.quantity}</li>)}
             </ul>
-            <ShoppingListForm addItem={addItem} />
+            <ValidatedShoppingListForm addItem={addItem} />
         </div>
     );
 }
-
-export default ShoppingList;
