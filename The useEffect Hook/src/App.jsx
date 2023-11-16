@@ -1,10 +1,10 @@
-import Counter from './Counter';
+import QuoteFetcher from './QuoteFetcher';
 
 export default function App() {
 
   return (
     <>
-      <Counter />
+      <QuoteFetcher />
     </>
   )
 }
