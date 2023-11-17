@@ -20,6 +20,12 @@ export default function QuoteFetcherLoader() {
             // These are batched together by react, ant they won't cause two times render
             setQuote(jsonResponse.quote);
             setIsLoading(false);
+            /*
+            This means that if you call multiple setState functions consecutively
+             within the same synchronous context
+             (such as within an event handler or the body of a function), 
+             React will batch those updates and perform a single re-render.
+            */
         }
 
         fetchQuote();
