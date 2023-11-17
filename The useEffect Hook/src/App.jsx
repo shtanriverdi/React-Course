@@ -1,10 +1,10 @@
-import QuoteFetcher from './QuoteFetcher';
+import QuoteFetcherLoader from './QuoteFetcherLoader';
 
 export default function App() {
 
   return (
     <>
-      <QuoteFetcher />
+      <QuoteFetcherLoader />
     </>
   )
 }
