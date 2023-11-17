@@ -10,7 +10,7 @@ export default function FormDemo() {
     const updateName = (e) => setName(e.target.value);
 
     const [volume, setVolume] = useState("");
-    const updateVolume = (e) => setVolume(e.target.value);
+    const updateVolume = (e, newNalue) => setVolume(newNalue);
 
     return (
         <div>
