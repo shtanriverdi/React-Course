@@ -6,6 +6,7 @@ function RatingDemo() {
     return (
         <div>
             <h1>Rating Demo</h1>
+            <h2>Score: {score}</h2>
             <Rating
                 name="simple-controlled"
                 value={score}
