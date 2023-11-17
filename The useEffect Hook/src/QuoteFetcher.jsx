@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Use proxy for CORS error
-const proxy = "https://cors-anywhere.herokuapp.com/";
-const RANDOM_QUOTE_URL = `https://zenquotes.io/api/today`;
+const RANDOM_QUOTE_URL = `https://inspo-quotes-api.herokuapp.com/quotes/random`;
 
 export default function QuoteFetcher() {
     // Won't be happy with an async function!
@@ -34,32 +32,20 @@ export default function QuoteFetcher() {
 
     // Will run only on initial mount once after render
     // 'useEffect' doesn't want us to provide async callback
+    // to not get into race condition.
     // So our callbacks has to be synchronous
     // But we can provide a regular synchronous function then pass
     // the asynchronous function in it
     useEffect(() => {
-        // How Colt Steele Showed
-        // Initialize async function here
-        async function fetchQuoteInitializer() {
-            const response = await fetch(proxy + RANDOM_QUOTE_URL);
-            const jsonResponse = await response.json();
-            const text = jsonResponse[0].q;
-            const author = jsonResponse[0].a;
-            setQuote({ text, author });
-            // return [text, author];
-        }
-        fetchQuoteInitializer();
-
-        // Or we can directly run your async func here
-        // fetchQuote();
+        fetchQuote();
     }, []);
 
     async function fetchQuote() {
-        const response = await fetch(proxy + RANDOM_QUOTE_URL);
+        const response = await fetch(RANDOM_QUOTE_URL);
+        console.dir(response);
         const jsonResponse = await response.json();
-        const text = jsonResponse[0].q;
-        const author = jsonResponse[0].a;
-        setQuote({ text, author });
+        console.log(jsonResponse);
+        setQuote(jsonResponse.quote);
     }
 
     return (
