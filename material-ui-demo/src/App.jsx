@@ -1,11 +1,11 @@
 import './App.css';
-import RatingDemo from './RatingDemo';
+import FormDemo from './FormDemo';
 
 export default function App() {
 
   return (
     <div>
-      <RatingDemo />
+      <FormDemo />
     </div>
   )
 }
