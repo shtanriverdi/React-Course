@@ -16,19 +16,7 @@ export default function FormDemo() {
 
     return (
         <div>
-            <Box
-                sx={{
-                    width: 100,
-                    height: 100,
-                    borderRadius: 1,
-                    bgcolor: 'green',
-                    '&:hover': {
-                        bgcolor: 'primary.dark',
-                    },
-                }}
-            />
-
-            <Box component="section" sx={{ p: 6, border: '1px dashed grey', bgcolor: 'lightblue', }}>
+            <Box component="section" sx={{ p: 6, width: 300, margin: '0 auto', border: '2px solid grey', borderRadius: 5, bgcolor: 'lightgreen', }}>
                 <TextField
                     onChange={updateName}
                     value={name}
@@ -37,30 +25,29 @@ export default function FormDemo() {
                     label="Puppy Name"
                     variant="outlined"
                 />
-            </Box>
-
-            <h1>name is:</h1>
-            <h2>{name}</h2>
-            <TextField
-                onChange={updateName}
-                value={name}
-                id="outlined-basic"
-                placeholder="Fido"
-                label="Puppy Name"
-                variant="outlined"
-            />
-            <br />
-
-            <h2>{volume}</h2>
-            <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-                <VolumeDown />
-                <Slider
-                    aria-label="Volume"
-                    value={volume}
-                    onChange={updateVolume}
+                <h1>name is:</h1>
+                <h2>{name}</h2>
+                <TextField
+                    onChange={updateName}
+                    value={name}
+                    id="outlined-basic"
+                    placeholder="Fido"
+                    label="Puppy Name"
+                    variant="outlined"
                 />
-                <VolumeUp />
-            </Stack>
+                <br />
+
+                <h2>{volume}</h2>
+                <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+                    <VolumeDown />
+                    <Slider
+                        aria-label="Volume"
+                        value={volume}
+                        onChange={updateVolume}
+                    />
+                    <VolumeUp />
+                </Stack>
+            </Box>
         </div>
     );
 }
