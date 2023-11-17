@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Loader.css";
 
 const RANDOM_QUOTE_URL = `https://inspo-quotes-api.herokuapp.com/quotes/random`;
 
@@ -35,7 +36,7 @@ export default function QuoteFetcherLoader() {
 
     return (
         <div>
-            { isLoading && <h3><i style={{color: 'slategray'}}>Quote is loading...</i></h3> }
+            <h3 className="Loader" style={{ opacity: isLoading ? 1 : 0 }}>Quote is loading...</h3>
             <h1>Random Quote</h1>
             <h2>{quote.text}</h2>
             <i>{quote.author}</i>
