@@ -15,6 +15,9 @@ export default function QuoteFetcherLoader() {
         async function fetchQuote() {
             const response = await fetch(RANDOM_QUOTE_URL);
             const jsonResponse = await response.json();
+            /* In React, state updates that occur 
+            in the same synchronous block of code are batched together. */
+            // These are batched together by react, ant they won't cause two times render
             setQuote(jsonResponse.quote);
             setIsLoading(false);
         }
