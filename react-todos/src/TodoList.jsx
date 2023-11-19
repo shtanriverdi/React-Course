@@ -7,6 +7,7 @@ export default function TodoList() {
     const [todos, setTodos] = useState(todoItems);
 
     const removeTodo = (id) => {
+        console.log("removeTodo ", id);
         setTodos(prevTodos => {
             return prevTodos.filter(todo => {
                 if (todo.id !== id) {
@@ -17,7 +18,7 @@ export default function TodoList() {
     }
 
     const editTodo = (id) => {
-
+        console.log("editTodo ", id);
     }
 
     return (

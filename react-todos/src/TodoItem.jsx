@@ -22,14 +22,18 @@ export default function TodoItem({ item, onDelete, onEdit }) {
             sx={listItemStyle}
             key={item.id}
             secondaryAction={
-                <IconButton edge="end" aria-label="comments">
+                <IconButton
+                    onClick={() => onDelete(item.id)}
+                    edge="end"
+                    aria-label="comments"
+                >
                     <DeleteOutline />
                 </IconButton>
             }
             disablePadding
         >
 
-            <ListItemButton onClick={() => onDelete(item.id)} role={undefined} dense>
+            <ListItemButton onClick={() => onEdit(item.id)} role={undefined} dense>
                 <ListItemIcon>
                     <Checkbox
                         edge="start"
