@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { DeleteOutline } from '@mui/icons-material';
 
-export default function TodoItem({ item, onDelete, onEdit }) {
+export default function TodoItem({ item, onDelete, onEdit, onToggle }) {
     const labelId = item.id;
     const listItemStyle = {
         width: '100%',
@@ -36,6 +36,7 @@ export default function TodoItem({ item, onDelete, onEdit }) {
             <ListItemButton onClick={() => onEdit(item.id)} role={undefined} dense>
                 <ListItemIcon>
                     <Checkbox
+                        onChange={() => onToggle(item.id)}
                         edge="start"
                         checked={item.done}
                         tabIndex={-1}

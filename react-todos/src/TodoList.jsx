@@ -17,6 +17,20 @@ export default function TodoList() {
         });
     }
 
+    const toggleTodo = (id) => {
+        console.log("toggleTodo ", id);
+        setTodos(prevTodos => {
+            return prevTodos.map(todo => {
+                if (todo.id === id) {
+                    return {...todo, done: !todo.done }
+                }
+                else {
+                    return todo;
+                }
+            })
+        });
+    }
+
     const editTodo = (id) => {
         console.log("editTodo ", id);
     }
@@ -30,6 +44,7 @@ export default function TodoList() {
                         item={item}
                         onDelete={() => removeTodo(item.id)}
                         onEdit={() => editTodo(item.id)}
+                        onToggle={() => toggleTodo(item.id)}
                     />
                 )
             }
