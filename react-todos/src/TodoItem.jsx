@@ -6,6 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { DeleteOutline } from '@mui/icons-material';
+import Rating from './RatingSection';
 
 export default function TodoItem({ item, onDelete, onEdit, onToggle }) {
     const labelId = item.id;
@@ -47,7 +48,8 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle }) {
 
                 <Typography id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                     {item.title}
-                    <ListItemText id={labelId} primary={`Line item ${item.description}`} />
+                    <ListItemText id={labelId} primary={item.description} />
+                    <Rating priority={item.priority}/>
                 </Typography>
             </ListItemButton>
         </ListItem>

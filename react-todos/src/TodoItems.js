@@ -14,7 +14,7 @@ const todoItems = [
         title: 'Drink Water',
         description: 'Drink half liters water in the morning',
         done: false,
-        priority: 1,
+        priority: 2,
         backgroundColor: getRandomColor()
     },
     {
@@ -22,7 +22,7 @@ const todoItems = [
         title: 'Pray',
         description: 'Pray & Meditation for 20 mins every morning',
         done: true,
-        priority: 1,
+        priority: 3,
         backgroundColor: getRandomColor()
     },
     {
@@ -30,7 +30,7 @@ const todoItems = [
         title: 'Eye Stretch',
         description: 'Focus on an object at least 20 meters away for 30 secs',
         done: false,
-        priority: 1,
+        priority: 2,
         backgroundColor: getRandomColor()
     },
     {

@@ -2,6 +2,8 @@ import List from '@mui/material/List';
 import { todoItems } from './TodoItems.js';
 import TodoItem from './TodoItem.jsx';
 import { useState } from 'react';
+import AddTodo from './AddTodo.jsx';
+import Box from '@mui/material/Box';
 
 export default function TodoList() {
     const [todos, setTodos] = useState(todoItems);
@@ -22,7 +24,7 @@ export default function TodoList() {
         setTodos(prevTodos => {
             return prevTodos.map(todo => {
                 if (todo.id === id) {
-                    return {...todo, done: !todo.done }
+                    return { ...todo, done: !todo.done }
                 }
                 else {
                     return todo;
@@ -37,6 +39,13 @@ export default function TodoList() {
 
     return (
         <List sx={{ width: '100%', maxWidth: 560 }}>
+            <h1>Todo List!</h1>
+            <hr />
+            <Box sx={{ width: '100%' }}>
+                <h3>Add New Todo:</h3>
+                <AddTodo />
+            </Box>
+            <hr />
             {
                 todos.map(item =>
                     <TodoItem
