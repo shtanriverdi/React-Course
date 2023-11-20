@@ -15,7 +15,7 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingCha
         borderRadius: 5,
         mb: 2
     };
-    const textStrikeThroughStyle = { textDecoration : item.done ? 'line-through' : 'none' };
+    const textStrikeThroughStyle = { textDecoration: item.done ? 'line-through' : 'none' };
 
     return (
         <ListItem
@@ -32,7 +32,6 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingCha
             }
             disablePadding
         >
-
             <ListItemButton onClick={() => onEdit(item.id)} role={undefined} dense>
                 <ListItemIcon>
                     <Checkbox
@@ -45,7 +44,7 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingCha
                     />
                 </ListItemIcon>
 
-                <Typography style={textStrikeThroughStyle}  id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                <Typography style={textStrikeThroughStyle} id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                     {item.title}
                     <ListItemText id={labelId} primary={item.description} />
                     <Rating priority={item.priority} onRatingChange={onRatingChange} />

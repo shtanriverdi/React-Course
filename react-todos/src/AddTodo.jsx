@@ -2,14 +2,14 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Rating from './RatingSection';
 import Button from '@mui/material/Button';
-import { v4 as uuid } from 'uuid';
+import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { AddCircleOutline } from '@mui/icons-material';
 import { getRandomColor } from './Colors.js';
 
 export default function AddTodo({ onAddItem }) {
     const [item, setItem] = useState({
-        id: uuid(),
+        id: crypto.randomUUID(),
         title: '',
         description: '',
         done: false,
@@ -60,8 +60,13 @@ export default function AddTodo({ onAddItem }) {
                 variant="outlined"
                 multiline={true}
             />
-            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Rating priority={item.priority} onRatingChange={onRatingChange} />
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Typography component="p">
+                        Priority:
+                    </Typography>
+                    <Rating priority={item.priority} onRatingChange={onRatingChange} />
+                </Box>
                 <Button onClick={handleSubmit} color='success' component="label" variant="contained" endIcon={<AddCircleOutline />}>
                     Create
                 </Button>

@@ -4,8 +4,7 @@ import TodoItem from './TodoItem.jsx';
 import { useState } from 'react';
 import AddTodo from './AddTodo.jsx';
 import Box from '@mui/material/Box';
-import { v4 as uuid } from 'uuid';
-import EditTodo from './EditTodo';
+// import EditTodo from './EditTodo';
 
 export default function TodoList() {
     const [todos, setTodos] = useState(todoItems);
@@ -34,14 +33,14 @@ export default function TodoList() {
     }
 
     // Model State
-    const [isOpen, setOpen] = useState(false);
-    const onModalClose = (event) => {
-        setOpen(false);
-    }
+    // const [isOpen, setOpen] = useState(false);
+    // const onModalClose = (event) => {
+    //     setOpen(false);
+    // }
 
     const editTodo = (id) => {
         console.log("editTodo ", id);
-        setOpen(!isOpen);
+        // setOpen(!isOpen);
     }
 
     const rateTodo = (id) => {
@@ -50,7 +49,7 @@ export default function TodoList() {
 
     const addTodo = (newItem) => {
         setTodos(prevTodos => {
-            return [{ ...newItem, id: uuid() }, ...prevTodos]
+            return [{ ...newItem, id: crypto.randomUUID() }, ...prevTodos]
         });
     }
 
@@ -73,7 +72,7 @@ export default function TodoList() {
                     />
                 )
             }
-            <EditTodo isOpen={isOpen} handleClose={onModalClose} />
+            {/* <EditTodo item={item} isOpen={isOpen} handleClose={onModalClose} /> */}
         </List>
     );
 }

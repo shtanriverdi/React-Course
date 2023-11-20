@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { useState } from 'react';
 
 const style = {
   position: 'absolute',
@@ -15,21 +14,21 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal({ isOpen, handleClose }) {
+export default function BasicModal({ isOpen, item }) {
   return (
     <div>
       <Modal
         open={isOpen}
-        onClose={handleClose}
+        onClose={null}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            {item.title}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            {item.description}
           </Typography>
         </Box>
       </Modal>
