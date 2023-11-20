@@ -1,12 +1,21 @@
 import List from '@mui/material/List';
-import { todoItems } from './TodoItems.js';
+// import { todoItems } from './TodoItems.js';
 import TodoItem from './TodoItem.jsx';
 import { useEffect, useState } from 'react';
 import AddTodo from './AddTodo.jsx';
 import Box from '@mui/material/Box';
 
+const getInitialData = () => {
+    const initData = JSON.parse(localStorage.getItem("todos"));
+    if (!initData) {
+        return [];
+    }
+    return initData;
+}
+
 export default function TodoList() {
-    const [todos, setTodos] = useState(todoItems);
+    // const [todos, setTodos] = useState(todoItems);
+    const [todos, setTodos] = useState(getInitialData);
 
     const removeTodo = (id) => {
         setTodos(prevTodos => {
