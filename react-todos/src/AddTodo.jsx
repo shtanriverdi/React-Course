@@ -21,9 +21,15 @@ export default function AddTodo({ onAddItem }) {
         if (item.title !== "") {
             onAddItem(item);
             // Change the background color for the next new item
-            setItem((prevItem) => {
-                return { ...prevItem, backgroundColor: getRandomColor() };
+            setItem({
+                id: crypto.randomUUID(),
+                title: '',
+                description: '',
+                done: false,
+                priority: 1,
+                backgroundColor: getRandomColor()
             });
+
         }
     }
 
@@ -33,6 +39,7 @@ export default function AddTodo({ onAddItem }) {
         setItem((prevItem) => {
             return { ...prevItem, [name]: value };
         });
+
     }
 
     const onRatingChange = (event) => {
