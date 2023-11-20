@@ -11,12 +11,11 @@ import Rating from './RatingSection';
 export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingChange }) {
     const labelId = item.id;
     const listItemStyle = {
-        width: '100%',
-        maxWidth: 560,
         bgcolor: item.backgroundColor,
-        m: 1,
-        borderRadius: 5
+        borderRadius: 5,
+        mb: 2
     };
+    const textStrikeThroughStyle = { textDecoration : item.done ? 'line-through' : 'none' };
 
     return (
         <ListItem
@@ -46,7 +45,7 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingCha
                     />
                 </ListItemIcon>
 
-                <Typography id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                <Typography style={textStrikeThroughStyle}  id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                     {item.title}
                     <ListItemText id={labelId} primary={item.description} />
                     <Rating priority={item.priority} onRatingChange={onRatingChange} />

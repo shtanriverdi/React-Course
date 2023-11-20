@@ -45,19 +45,17 @@ export default function TodoList() {
     const addTodo = (newItem) => {
         console.log("addTodo ", newItem);
         setTodos(prevTodos => {
-            return [ { ...newItem, id: uuid() }, ...prevTodos ]
+            return [{ ...newItem, id: uuid() }, ...prevTodos]
         });
     }
 
     return (
         <List sx={{ width: '100%', maxWidth: 560 }}>
             <h1>Todo List!</h1>
-            <hr />
-            <Box>
+            <Box sx={{ mb: 2 }}>
                 <h3>Add New Todo:</h3>
                 <AddTodo onAddItem={addTodo} />
             </Box>
-            <hr />
             {
                 todos.map(item =>
                     <TodoItem
