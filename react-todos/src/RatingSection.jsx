@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import PropTypes from 'prop-types';
+import { circularProgressClasses } from '@mui/material';
 
 const StyledRating = styled(Rating)(({ theme }) => ({
   '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
@@ -33,7 +34,7 @@ IconContainer.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function RatingSection({ priority }) {
+export default function RatingSection({ priority, onRatingChange }) {
   return (
     <StyledRating
       name="highlight-selected-only"
@@ -42,6 +43,7 @@ export default function RatingSection({ priority }) {
       IconContainerComponent={IconContainer}
       getLabelText={(value) => customIcons[value].label}
       highlightSelectedOnly
+      onClick={(value) => onRatingChange(value)}
     />
   );
 }

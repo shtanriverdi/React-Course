@@ -18,7 +18,7 @@ export default function EmojiClicker() {
     /* https://stackoverflow.com/questions/60120261/when-to-use-usestate-initial-value-as-function */
     // Set the random unique ID
     // const [emojis, setEmojis] = useState([{ id: uuid(), emoji: getRandomEmoji() }]);
-    const [emojis, setEmojis] = useState(getInitialEmoji());
+    const [emojis, setEmojis] = useState(getInitialEmoji);
 
     const addEmoji = () => {
         setEmojis((previousEmojis) => {

@@ -37,6 +37,10 @@ export default function TodoList() {
         console.log("editTodo ", id);
     }
 
+    const rateTodo = (id) => {
+        console.log("rateTodo ", id);
+    }
+
     return (
         <List sx={{ width: '100%', maxWidth: 560 }}>
             <h1>Todo List!</h1>
@@ -54,6 +58,7 @@ export default function TodoList() {
                         onDelete={() => removeTodo(item.id)}
                         onEdit={() => editTodo(item.id)}
                         onToggle={() => toggleTodo(item.id)}
+                        onRatingChange={() => rateTodo(item.id)}
                     />
                 )
             }
