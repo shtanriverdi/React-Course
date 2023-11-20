@@ -1,10 +1,9 @@
 import List from '@mui/material/List';
 import { todoItems } from './TodoItems.js';
 import TodoItem from './TodoItem.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddTodo from './AddTodo.jsx';
 import Box from '@mui/material/Box';
-// import EditTodo from './EditTodo';
 
 export default function TodoList() {
     const [todos, setTodos] = useState(todoItems);
@@ -32,17 +31,6 @@ export default function TodoList() {
         });
     }
 
-    // Model State
-    // const [isOpen, setOpen] = useState(false);
-    // const onModalClose = (event) => {
-    //     setOpen(false);
-    // }
-
-    const editTodo = (id) => {
-        console.log("editTodo ", id);
-        // setOpen(!isOpen);
-    }
-
     const rateTodo = (id) => {
         console.log("rateTodo ", id);
     }
@@ -52,6 +40,11 @@ export default function TodoList() {
             return [{ ...newItem, id: crypto.randomUUID() }, ...prevTodos]
         });
     }
+
+    // Everytime todos state is changed, save to localstorage
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
 
     return (
         <List sx={{ width: '100%', maxWidth: 560 }}>
@@ -66,13 +59,11 @@ export default function TodoList() {
                         key={item.id}
                         item={item}
                         onDelete={() => removeTodo(item.id)}
-                        onEdit={() => editTodo(item.id)}
                         onToggle={() => toggleTodo(item.id)}
                         onRatingChange={() => rateTodo(item.id)}
                     />
                 )
             }
-            {/* <EditTodo item={item} isOpen={isOpen} handleClose={onModalClose} /> */}
         </List>
     );
 }

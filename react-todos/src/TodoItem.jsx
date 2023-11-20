@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { DeleteOutline } from '@mui/icons-material';
 import Rating from './RatingSection';
 
-export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingChange }) {
+export default function TodoItem({ item, onDelete, onToggle, onRatingChange }) {
     const labelId = item.id;
     const listItemStyle = {
         bgcolor: item.backgroundColor,
@@ -32,7 +32,7 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingCha
             }
             disablePadding
         >
-            <ListItemButton onClick={() => onEdit(item.id)} role={undefined} dense>
+            <ListItemButton role={undefined} dense>
                 <ListItemIcon>
                     <Checkbox
                         onChange={() => onToggle(item.id)}
