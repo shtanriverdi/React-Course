@@ -5,12 +5,12 @@ import { useState } from 'react';
 import AddTodo from './AddTodo.jsx';
 import Box from '@mui/material/Box';
 import { v4 as uuid } from 'uuid';
+import EditTodo from './EditTodo';
 
 export default function TodoList() {
     const [todos, setTodos] = useState(todoItems);
 
     const removeTodo = (id) => {
-        console.log("removeTodo ", id);
         setTodos(prevTodos => {
             return prevTodos.filter(todo => {
                 if (todo.id !== id) {
@@ -21,7 +21,6 @@ export default function TodoList() {
     }
 
     const toggleTodo = (id) => {
-        console.log("toggleTodo ", id);
         setTodos(prevTodos => {
             return prevTodos.map(todo => {
                 if (todo.id === id) {
@@ -34,8 +33,15 @@ export default function TodoList() {
         });
     }
 
+    // Model State
+    const [isOpen, setOpen] = useState(false);
+    const onModalClose = (event) => {
+        setOpen(false);
+    }
+
     const editTodo = (id) => {
         console.log("editTodo ", id);
+        setOpen(!isOpen);
     }
 
     const rateTodo = (id) => {
@@ -43,7 +49,6 @@ export default function TodoList() {
     }
 
     const addTodo = (newItem) => {
-        console.log("addTodo ", newItem);
         setTodos(prevTodos => {
             return [{ ...newItem, id: uuid() }, ...prevTodos]
         });
@@ -68,6 +73,7 @@ export default function TodoList() {
                     />
                 )
             }
+            <EditTodo isOpen={isOpen} handleClose={onModalClose} />
         </List>
     );
 }

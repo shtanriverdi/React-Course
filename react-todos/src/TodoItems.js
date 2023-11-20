@@ -21,7 +21,7 @@ const todoItems = [
         id: 3,
         title: 'Pray',
         description: 'Pray & Meditation for 20 mins every morning',
-        done: true,
+        done: false,
         priority: 3,
         backgroundColor: getRandomColor()
     },
@@ -29,7 +29,7 @@ const todoItems = [
         id: 4,
         title: 'Eye Stretch',
         description: 'Focus on an object at least 20 meters away for 30 secs',
-        done: false,
+        done: true,
         priority: 2,
         backgroundColor: getRandomColor()
     },
