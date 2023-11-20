@@ -20,6 +20,10 @@ export default function AddTodo({ onAddItem }) {
     const handleSubmit = (event) => {
         console.log(event.target, "Add ITEM");
         onAddItem(item);
+        // Change the background color for the next new item
+        setItem((prevItem) => {
+            return { ...prevItem, backgroundColor: getRandomColor() };
+        });
     }
 
     const handleChange = (event) => {
