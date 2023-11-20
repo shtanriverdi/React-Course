@@ -1,17 +1,67 @@
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import Rating from './RatingSection';
+import Button from '@mui/material/Button';
+import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
+import { AddCircleOutline } from '@mui/icons-material';
+import { getRandomColor } from './Colors.js';
 
-export default function AddTodo() {
+export default function AddTodo({ onAddItem }) {
     const [item, setItem] = useState({
-        id: 1,
-        title: 'Morning Exercise',
-        description: 'Small exercises in the morning for back and neck',
+        id: uuid(),
+        title: '',
+        description: '',
         done: false,
         priority: 1,
-        backgroundColor: '#fff'
+        backgroundColor: getRandomColor()
     });
 
+    const handleSubmit = (event) => {
+        console.log(event.target, "Add ITEM");
+        onAddItem(item);
+    }
+
+    const handleChange = (event) => {
+        console.log("OnChange: ", event.target);
+        const value = event.target.value;
+        const name = event.target.name;
+        console.log("value: ", value);
+        console.log("name: ", name);
+        setItem((prevItem) => {
+            return { ...prevItem, [name]: value };
+        });
+    }
+
+    const onRatingChange = (event) => {
+        const value = event.target.value;
+        setItem((prevItem) => {
+            const newItem = { ...prevItem };
+            newItem.priority = value;
+            console.log(newItem)
+            return newItem;
+        });
+    }
+
     return (
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <TextField name="title" onChange={handleChange} value={item.title} style={{ marginBottom: '10px' }} id="outlined-basic" label="Title" variant="outlined" />
+            <TextField
+                name="description"
+                onChange={handleChange}
+                value={item.description}
+                style={{ marginBottom: '20px' }}
+                id="outlined-basic"
+                label="Description"
+                variant="outlined"
+                multiline={true}
+            />
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Rating priority={item.priority} onRatingChange={onRatingChange} />
+                <Button onClick={handleSubmit} color='success' component="label" variant="contained" endIcon={<AddCircleOutline />}>
+                    Create
+                </Button>
+            </Box>
+        </Box >
     );
 }

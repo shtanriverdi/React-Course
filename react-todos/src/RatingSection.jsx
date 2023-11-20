@@ -2,7 +2,6 @@ import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import PropTypes from 'prop-types';
-import { circularProgressClasses } from '@mui/material';
 
 const StyledRating = styled(Rating)(({ theme }) => ({
   '& .MuiRating-iconEmpty .MuiSvgIcon-root': {

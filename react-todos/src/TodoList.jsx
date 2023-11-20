@@ -4,6 +4,7 @@ import TodoItem from './TodoItem.jsx';
 import { useState } from 'react';
 import AddTodo from './AddTodo.jsx';
 import Box from '@mui/material/Box';
+import { v4 as uuid } from 'uuid';
 
 export default function TodoList() {
     const [todos, setTodos] = useState(todoItems);
@@ -41,13 +42,20 @@ export default function TodoList() {
         console.log("rateTodo ", id);
     }
 
+    const addTodo = (newItem) => {
+        console.log("addTodo ", newItem);
+        setTodos(prevTodos => {
+            return [ { ...newItem, id: uuid() }, ...prevTodos ]
+        });
+    }
+
     return (
         <List sx={{ width: '100%', maxWidth: 560 }}>
             <h1>Todo List!</h1>
             <hr />
-            <Box sx={{ width: '100%' }}>
+            <Box>
                 <h3>Add New Todo:</h3>
-                <AddTodo />
+                <AddTodo onAddItem={addTodo} />
             </Box>
             <hr />
             {

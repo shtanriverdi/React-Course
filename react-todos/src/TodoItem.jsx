@@ -12,7 +12,7 @@ export default function TodoItem({ item, onDelete, onEdit, onToggle, onRatingCha
     const labelId = item.id;
     const listItemStyle = {
         width: '100%',
-        maxWidth: 460,
+        maxWidth: 560,
         bgcolor: item.backgroundColor,
         m: 1,
         borderRadius: 5
