@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { DeleteOutline } from '@mui/icons-material';
 import Rating from './RatingSection';
 
-export default function TodoItem({ item, onDelete, onToggle, onRatingChange }) {
+export default function TodoItem({ item, onDelete, onToggle }) {
     const labelId = item.id;
     const listItemStyle = {
         bgcolor: item.backgroundColor,
@@ -47,7 +47,7 @@ export default function TodoItem({ item, onDelete, onToggle, onRatingChange }) {
                 <Typography style={textStrikeThroughStyle} id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                     {item.title}
                     <ListItemText id={labelId} primary={item.description} />
-                    <Rating priority={item.priority} onRatingChange={onRatingChange} isDisabled={true} />
+                    <Rating priority={item.priority} isDisabled={true} />
                 </Typography>
             </ListItemButton>
         </ListItem>
