@@ -17,10 +17,9 @@ export default function AddTodo({ onAddItem }) {
         backgroundColor: getRandomColor()
     });
 
-    const handleSubmit = (event) => {
+    const handleSubmit = () => {
         if (item.title !== "") {
             onAddItem(item);
-            // Change the background color for the next new item
             setItem({
                 id: crypto.randomUUID(),
                 title: '',
@@ -29,7 +28,6 @@ export default function AddTodo({ onAddItem }) {
                 priority: 1,
                 backgroundColor: getRandomColor()
             });
-
         }
     }
 
@@ -47,7 +45,6 @@ export default function AddTodo({ onAddItem }) {
         setItem((prevItem) => {
             const newItem = { ...prevItem };
             newItem.priority = value;
-            console.log(newItem)
             return newItem;
         });
     }
@@ -67,10 +64,10 @@ export default function AddTodo({ onAddItem }) {
             />
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                    <Typography component="p">
+                    <Typography>
                         Priority:
                     </Typography>
-                    <Rating priority={item.priority} onRatingChange={onRatingChange} />
+                    <Rating priority={item.priority} onRatingChange={onRatingChange} isDisabled={false} />
                 </Box>
                 <Button onClick={handleSubmit} color='success' component="label" variant="contained" endIcon={<AddCircleOutline />}>
                     Create

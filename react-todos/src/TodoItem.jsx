@@ -47,7 +47,7 @@ export default function TodoItem({ item, onDelete, onToggle, onRatingChange }) {
                 <Typography style={textStrikeThroughStyle} id={labelId} sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
                     {item.title}
                     <ListItemText id={labelId} primary={item.description} />
-                    <Rating priority={item.priority} onRatingChange={onRatingChange} />
+                    <Rating priority={item.priority} onRatingChange={onRatingChange} isDisabled={true} />
                 </Typography>
             </ListItemButton>
         </ListItem>

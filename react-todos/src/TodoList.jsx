@@ -40,10 +40,6 @@ export default function TodoList() {
         });
     }
 
-    const rateTodo = (id) => {
-        console.log("rateTodo ", id);
-    }
-
     const addTodo = (newItem) => {
         setTodos(prevTodos => {
             return [{ ...newItem, id: crypto.randomUUID() }, ...prevTodos]
@@ -69,7 +65,6 @@ export default function TodoList() {
                         item={item}
                         onDelete={() => removeTodo(item.id)}
                         onToggle={() => toggleTodo(item.id)}
-                        onRatingChange={() => rateTodo(item.id)}
                     />
                 )
             }
