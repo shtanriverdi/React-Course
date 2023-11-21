@@ -16,7 +16,6 @@ export default function TodoItem({ item, onDelete, onToggle }) {
         mb: 2
     };
     const textStrikeThroughStyle = { textDecoration: item.done ? 'line-through' : 'none' };
-
     return (
         <ListItem
             sx={listItemStyle}

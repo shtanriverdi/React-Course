@@ -12,15 +12,12 @@ const StyledRating = styled(Rating)(({ theme }) => ({
 const customIcons = {
   1: {
     icon: <CircleIcon style={{ width: 17 }} color="success" />,
-    label: 'Easy',
   },
   2: {
     icon: <CircleIcon style={{ width: 17 }} color="warning" />,
-    label: 'Medium',
   },
   3: {
     icon: <CircleIcon style={{ width: 17 }} color="error" />,
-    label: 'Hard',
   }
 };
 

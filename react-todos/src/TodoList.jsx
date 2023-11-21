@@ -1,5 +1,4 @@
 import List from '@mui/material/List';
-// import { todoItems } from './TodoItems.js';
 import TodoItem from './TodoItem.jsx';
 import { useEffect, useState } from 'react';
 import AddTodo from './AddTodo.jsx';
@@ -14,14 +13,13 @@ const getInitialData = () => {
 }
 
 export default function TodoList() {
-    // const [todos, setTodos] = useState(todoItems);
     const [todos, setTodos] = useState(getInitialData);
 
     const removeTodo = (id) => {
         setTodos(prevTodos => {
             return prevTodos.filter(todo => {
                 if (todo.id !== id) {
-                    return todo
+                    return todo;
                 }
             })
         });
@@ -31,14 +29,14 @@ export default function TodoList() {
         setTodos(prevTodos => {
             return prevTodos.map(todo => {
                 if (todo.id === id) {
-                    return { ...todo, done: !todo.done }
-                }
-                else {
+                    return { ...todo, done: !todo.done };
+                } else {
                     return todo;
                 }
-            })
+            });
         });
-    }
+    };
+
 
     const addTodo = (newItem) => {
         setTodos(prevTodos => {

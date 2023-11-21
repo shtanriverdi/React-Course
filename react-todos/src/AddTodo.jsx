@@ -44,7 +44,7 @@ export default function AddTodo({ onAddItem }) {
         const value = event.target.value;
         setItem((prevItem) => {
             const newItem = { ...prevItem };
-            newItem.priority = value;
+            newItem.priority = parseInt(value);
             return newItem;
         });
     }
